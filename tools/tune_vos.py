@@ -118,7 +118,8 @@ def tune(param):
             im_show = im.copy()
             if f == 0: cv2.destroyAllWindows()
             if len(gt[f]) == 8:
-                cv2.polylines(im_show, [np.array(gt[f], np.int).reshape((-1, 1, 2))], True, (0, 255, 0), 3)
+                #cv2.polylines(im_show, [np.array(gt[f], np.int).reshape((-1, 1, 2))], True, (0, 255, 0), 3)
+                cv2.polylines(im_show, [np.array(gt[f], int).reshape((-1, 1, 2))], True, (0, 255, 0), 3)
             else:
                 cv2.rectangle(im_show, (gt[f, 0], gt[f, 1]), (gt[f, 0] + gt[f, 2], gt[f, 1] + gt[f, 3]), (0, 255, 0), 3)
             if len(location) == 8:
